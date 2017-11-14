@@ -17,7 +17,8 @@ namespace presentARClient  {
 		// new www request
 
 		[SetUp]
-		public void BeforeTest () {
+		public void BeforeTest () 
+		{
 
 		}
 			
@@ -30,7 +31,7 @@ namespace presentARClient  {
 			string modelName2 = urlHandler.getModelName (url2);
 			Assert.AreEqual ("norris", modelName2); 
 		}
-
+			
 	}
 
 }
