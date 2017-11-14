@@ -10,7 +10,8 @@ namespace presentARClient
 		private bool mIsScanning = false;
 		private string mTargetMetadata = "";
 		public ImageTargetBehaviour ImageTargetTemplate;
-		private GameObject chuck_instance;
+		private GameObject modelInstance;
+		private URLHandler urlHandler = new URLHandler();
 
 		// Use this for initialization
 		void Start () {
@@ -45,7 +46,6 @@ namespace presentARClient
 
 		public void OnNewSearchResult(TargetFinder.TargetSearchResult targetSearchResult) {
 			mTargetMetadata = targetSearchResult.MetaData;
-			//string url = "http://s3-eu-west-2.amazonaws.com/presentar-files/assets/uploaded_files/000/000/002/original/chuck.unity3d";
 			string url = mTargetMetadata;
 
 			WWW www = new WWW(url);
@@ -68,12 +68,13 @@ namespace presentARClient
 			yield return www;
 			AssetBundle bundle = www.assetBundle;
 			if(www.error == null){
-				GameObject model = (GameObject)bundle.LoadAsset("chuck");
-				chuck_instance = Instantiate(model);
-				chuck_instance.transform.parent = GameObject.Find ("ImageTarget").transform;
-				chuck_instance.transform.localScale = new Vector3 (0.002F, 0.002F, 0.002F);
+				string modelName = urlHandler.getModelName(www.url);
+				GameObject model = (GameObject)bundle.LoadAsset(modelName);
+				modelInstance = Instantiate(model);
+				modelInstance.transform.parent = GameObject.Find ("ImageTarget").transform;
+				modelInstance.transform.localScale = new Vector3 (0.002F, 0.002F, 0.002F);
 			}
-			else{
+			else {
 				Debug.Log(www.error);
 			}
 		}
