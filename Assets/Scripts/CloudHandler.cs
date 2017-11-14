@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace presentARClient {
-	
+namespace presentARClient 
+{
 	public class CloudHandler : MonoBehaviour, ICloudRecoEventHandler {
 		private CloudRecoBehaviour mCloudRecoBehaviour;
 		private bool mIsScanning = false;
