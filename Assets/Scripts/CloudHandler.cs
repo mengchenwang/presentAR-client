@@ -60,22 +60,7 @@ namespace presentARClient
 					(ImageTargetBehaviour)tracker.TargetFinder.EnableTracking(
 						targetSearchResult, ImageTargetTemplate.gameObject);
 
-				StartCoroutine(WaitForReq(www));
-			}
-		}
-
-		IEnumerator WaitForReq(WWW www) {
-			yield return www;
-			AssetBundle bundle = www.assetBundle;
-			if(www.error == null){
-				string modelName = urlHandler.getModelName(www.url);
-				GameObject model = (GameObject)bundle.LoadAsset(modelName);
-				modelInstance = Instantiate(model);
-				modelInstance.transform.parent = GameObject.Find ("ImageTarget").transform;
-				modelInstance.transform.localScale = new Vector3 (0.002F, 0.002F, 0.002F);
-			}
-			else {
-				Debug.Log(www.error);
+				StartCoroutine(urlHandler.WaitForRequest(url));
 			}
 		}
 
