@@ -6,6 +6,7 @@ Presentar allows you to harness the power of AR, and display 3D models which can
 ## Technologies used
 ----
 ![Unity](https://unity3d.com/profiles/unity3d/themes/unity/images/company/brand/logos/primary/unity-master-black.svg)   
+<img src="https://github.com/favicon.ico" width="48">
 
 Unity is a cross-platform game engine that enables Programmers to develop video games for PC, Consoles, Mobile devices, Tablets and Websites. Here it is used to build the client app and integrate Vuforia AR functionality. Since it is cross-platform, the client app can be built for any device supported by Unity.
 
