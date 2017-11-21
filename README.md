@@ -1,9 +1,8 @@
-PresentAR
+# PresentAR
+#### An augmented reality presentation aid.
 ==========
-A presentation aid for AR.
+Presentar allows you to harness the power of AR, and display 3D models which can be manipulated in real-time, wherever you are. 3D models and their assosiated Image Targets are uploaded to [the companion website](https://presentar.herokuapp.com/) and can then be accessed through this client app. The Image Targets are recognised using Vuforia Cloud Recognition and the 3D models are downloaded on-the-fly in the app using the AWS link stored in the image target metadata. This allows the user to add new models and image targets without having to interact directly with either Unity or the Vuforia Developer Portal.
 
-The website component to this app can be found here:
-https://presentar.herokuapp.com/
 
 Technologies used
 ----
