@@ -8,7 +8,9 @@
 
 <h4 align="center">The Mobile App component of PresentAR.</h4>
 
-![screenshot](images/app_logo.png)
+<h4 align="center">
+  <img src="https://github.com/mengchenwang/presentAR-client/blob/master/images/app_logo.png" alt="PresentAR-client" width="150">
+</h4>
 
 What is PresentAR?
 ----
